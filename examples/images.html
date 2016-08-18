@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>blobbr - examples - loading images</title>
+<h1><a href="https://github.com/stefanoio/blobbr">Blobbr</a> loading images example</h1>
+<a href="index.html">Examples index</a>
+
+<p>Image from Big Buck Bunny, (c) copyright 2008, Blender Foundation / <a href="http://www.bigbuckbunny.org">www.bigbuckbunny.org</a></p>
+<button type="button">Load image data</button>
+<div id="wrapper"></div>
+
+<script src="../dist/blobbr.min.js"></script>
+<script>
+if(blobbr) {
+	var
+		button = document.querySelector("button"),
+		imageLoaded = false;
+	document.querySelector("button").addEventListener("click", function() {
+		if(imageLoaded) {
+			var
+				img = document.createElement("img");
+			img.src = blobbr.get("contents/image.png").asURI;
+			document.getElementById("wrapper").appendChild(img);
+		} else {
+			button.disabled = true;
+			blobbr.load("contents/image.png", function(status) {
+				if(status === 200) {
+					imageLoaded = true;
+					button.innerHTML = "Add image";
+					button.disabled = false;
+				}
+			});
+		}
+	}, false);
+}
+</script>

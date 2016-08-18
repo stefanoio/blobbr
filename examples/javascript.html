@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>blobbr - examples - loading a script and execute it</title>
+<h1><a href="https://github.com/stefanoio/blobbr">Blobbr</a> loading a script and execute it example</h1>
+<a href="index.html">Examples index</a>
+
+<button type="button">Load and run</button>
+
+<script src="../dist/blobbr.min.js"></script>
+<script>
+if(blobbr) {
+	document.querySelector("button").addEventListener("click", function() {
+		blobbr.load("contents/javascript.js", function(status) {
+			if(status === 200) {
+				var
+					script = document.createElement("script");
+				document.body.appendChild(script);
+				script.src = this.asURI;
+			}
+		});
+	}, false);
+}
+</script>

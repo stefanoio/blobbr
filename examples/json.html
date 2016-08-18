@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>blobbr - examples - loading JSON data</title>
+<h1><a href="https://github.com/stefanoio/blobbr">Blobbr</a> loading JSON data example</h1>
+<a href="index.html">Examples index</a>
+
+<button type="button">Load</button>
+<div></div>
+
+<script src="../dist/blobbr.min.js"></script>
+<script>
+if(blobbr) {
+	document.querySelector("button").addEventListener("click", function() {
+		blobbr.load("contents/json.json", function(status) {
+			if(status === 200) {
+				this.getContentAsUTF8(function(data) {
+					console.log(JSON.parse(data));
+					document.querySelector("div").innerHTML += "<p>(check console for output)</p>";
+				});
+			}
+		});
+	}, false);
+}
+</script>

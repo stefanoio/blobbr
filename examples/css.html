@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>blobbr - examples - loading CSS and applying it</title>
+<h1><a href="https://github.com/stefanoio/blobbr">Blobbr</a> loading CSS and applying it example</h1>
+<a href="index.html">Examples index</a>
+
+<button type="button">Do it</button>
+
+<p>
+	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+</p>
+
+<script src="../dist/blobbr.min.js"></script>
+<script>
+if(blobbr) {
+	document.querySelector("button").addEventListener("click", function() {
+		blobbr.load("contents/css.css", function(status) {
+			if(status === 200) {
+				var
+					link = document.createElement("link");
+				link.rel = "stylesheet";
+				link.href = this.asURI;
+				document.querySelector("head").appendChild(link);
+			}
+		});
+	}, false);
+}
+</script>

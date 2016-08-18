@@ -1,0 +1,12 @@
+button {
+	display: none;
+}
+p {
+	color: #00f;
+}
+p::before {
+	content: "Success!";
+	font-size: 200%;
+	display: block;
+	color: #000;
+}

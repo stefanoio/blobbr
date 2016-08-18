@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>blobbr - examples - loading video</title>
+<h1><a href="https://github.com/stefanoio/blobbr">Blobbr</a> loading video example</h1>
+<a href="index.html">Examples index</a>
+<p>Video from Big Buck Bunny, (c) copyright 2008, Blender Foundation / <a href="http://www.bigbuckbunny.org">www.bigbuckbunny.org</a></p>
+<button type="button" id="load">Load</button>
+<div id="output"></div>
+
+<script src="../dist/blobbr.min.js"></script>
+<script>
+if(blobbr) {
+	var
+		play = function() {
+			document.getElementById("output").innerHTML = "<video src='" + blobbr.get("contents/video.mp4").asURI + "' autoplay controls></video>";
+		};
+	document.getElementById("load").addEventListener("click", function() {
+		this.disabled = true;
+		document.getElementById("output").innerHTML = "<p>Loading...</p>";
+		blobbr.load("contents/video.mp4", function() {
+			document.getElementById("output").innerHTML += "<p>Ready! <button type='button' id='play'>Play</button></p>";
+			document.getElementById("play").addEventListener("click", play, false);
+			document.getElementById("load").disabled = false;
+		}, function(loaded, size, url) {
+			document.getElementById("output").innerHTML += "<p>" + Math.round(loaded / size * 100) + "%</p>";
+		});
+	}, false);
+}
+</script>

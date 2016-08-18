@@ -1,0 +1,24 @@
+{
+  "name": "blobbr",
+  "version": "1.0.0",
+  "description": "Dynamic asset handling made easy.",
+  "directories": {
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanoio/blobbr.git"
+  },
+  "author": "Stefano Peloso",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/stefanoio/blobbr/issues"
+  },
+  "scripts": {
+    "build": "uglifyjs src/blobbr.js -o dist/blobbr.min.js -c -m"
+  },
+  "homepage": "https://github.com/stefanoio/blobbr#readme",
+  "devDependencies": {
+    "uglify-js": "^2.7.0"
+  }
+}

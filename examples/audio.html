@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>blobbr - examples - loading audio</title>
+<h1><a href="https://github.com/stefanoio/blobbr">Blobbr</a> loading audio example</h1>
+<a href="index.html">Examples index</a>
+<p>Audio from Big Buck Bunny, (c) copyright 2008, Blender Foundation / <a href="http://www.bigbuckbunny.org">www.bigbuckbunny.org</a></p>
+<button type="button" id="load">Load</button>
+<div id="output"></div>
+
+<script src="../dist/blobbr.min.js"></script>
+<script>
+if(blobbr) {
+	var
+		play = function() {
+			(new Audio(blobbr.get("contents/audio.mp3").asURI)).play();
+			document.getElementById("output").innerHTML += "<p>Playing...</p>";
+		};
+	document.getElementById("load").addEventListener("click", function() {
+		this.disabled = true;
+		document.getElementById("output").innerHTML = "<p>Loading...</p>";
+		blobbr.load("contents/audio.mp3", function(status) {
+			if(status === 200) {
+				document.getElementById("output").innerHTML += "<p>Ready! <button type='button' id='play'>Play</button></p>";
+				document.getElementById("play").addEventListener("click", play, false);
+				document.getElementById("load").disabled = false;
+			}
+		}, function(loaded, size, url) {
+			document.getElementById("output").innerHTML += "<p>" + Math.round(loaded / size * 100) + "%</p>";
+		});
+	}, false);
+}
+</script>
