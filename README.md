@@ -1,7 +1,7 @@
 # blobbr
 ## Dynamic asset handling made easy.
 
-Blobbr is a small (<2KB) interface to handle asset loading and runtime storing. It will 
+Blobbr is a small (<2KB) interface to handle asset loading and runtime storing. It will load any kind of file from the network and store it for later access.
 It works on any modern browser (IE10+) and has no dependency from any other libraries.
 
 Blobbr came as a global `blobbr` object with two methods:
