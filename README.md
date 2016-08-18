@@ -4,9 +4,9 @@
 Blobbr is a small (<2KB) interface to handle asset loading and runtime storing. It will load any kind of file from the network and store it for later access.
 It works on any modern browser (IE10+) and has no dependency from any other libraries.
 
-Blobbr came as a global `blobbr` object with two methods:
+Blobbr come as a global `blobbr` object with two methods:
 
-`blobbr.load(url, done_callback, progress_callback)` which will load a resource, calling and optional `progress_callback(loaded, total_size, url)` callback during progress and an optional `done_callback(status)` when done. That status is a HTTP status as an integer. If the loading succeeds, the context of the callback will be the blobbr item (see below).
+`blobbr.load(url, done_callback, progress_callback)` which will load a resource, calling an optional `progress_callback(loaded, total_size, url)` callback during progress and an optional `done_callback(status)` when done. That status is a HTTP status as an integer. If the loading succeeds, the context of the callback will be the blobbr item (see below).
 
 `blobbr.get(url)` will retrieve a previously loaded blobbr object (see below) from memory.
 
