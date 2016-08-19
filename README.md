@@ -8,13 +8,13 @@ Blobbr come as a global `blobbr` object with two methods:
 
 `blobbr.load(url, done_callback, progress_callback)` which will load a resource, calling an optional `progress_callback(loaded, total_size, url)` callback during progress and an optional `done_callback(status)` when done. That status is a HTTP status as an integer. If the loading succeeds, the context of the callback will be the blobbr item (see below).
 
-`blobbr.get(url)` will retrieve a previously loaded blobbr object (see below) from memory.
+`blobbr.get(url)` will retrieve a previously loaded blobbr item (see below) from memory.
 
 A read-only property that enumerates the loaded blobs is also available: 
 
-`blobbr.blobs` which is an object composed by key-value pairs for each blob, with the url as key and the blobbr object as value (see below).
+`blobbr.blobs` which is an object composed by key-value pairs for each blob, with the url as key and the blobbr item as value (see below).
 
-The blobber object represent a loaded blob and has several properties and methods:
+The blobber item represent a loaded blob and has several properties and methods:
 
 `obj.originalURL` the URL of the asset
 
@@ -26,9 +26,9 @@ The blobber object represent a loaded blob and has several properties and method
 
 `obj.getContentAsArrayBuffer()` the blob data in arrayBuffer format
 
-`obj.getContentAsUTF8()` the blob data interpreted UTF-8 data
+`obj.getContentAsUTF8()` the blob data interpreted as UTF-8 data
 
-`obj.getContentAsUTF16()` the blob data interpreted UTF-16 data
+`obj.getContentAsUTF16()` the blob data interpreted as UTF-16 data
 
 `obj.asURI` a blob runtime URI
 
