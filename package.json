@@ -1,7 +1,7 @@
 {
   "name": "blobbr",
   "version": "1.0.0",
-  "description": "Dynamic asset handling made easy.",
+  "description": "Dynamic asset handling, the easy way.",
   "directories": {
     "example": "examples"
   },
