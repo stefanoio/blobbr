@@ -24,11 +24,11 @@ The blobber item represent a loaded blob and has several properties and methods:
 
 `obj.size` size of the data in bytes
 
-`obj.getContentAsArrayBuffer()` the blob data in arrayBuffer format
+`obj.getContentAsArrayBuffer(callback: function(data) {})` the blob data in arrayBuffer format
 
-`obj.getContentAsUTF8()` the blob data interpreted as UTF-8 data
+`obj.getContentAsUTF8(callback: function(data) {})` the blob data interpreted as UTF-8 data
 
-`obj.getContentAsUTF16()` the blob data interpreted as UTF-16 data
+`obj.getContentAsUTF16(callback: function(data) {})` the blob data interpreted as UTF-16 data
 
 `obj.asURI` a blob runtime URI
 
