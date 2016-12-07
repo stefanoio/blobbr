@@ -1,7 +1,7 @@
 /*!
  * blobbr
  *
- * Stefano Peloso - https://github.com/stefanoio/togglr
+ * Stefano Peloso - https://github.com/stefanoio/blobbr
  *
  * Free to use under terms of WTFPL version 2 license
  */
