@@ -37,7 +37,7 @@ The blobber item represent a loaded blob and has several properties and methods:
 
 `get`ing a non loaded url will result in a `false` result.
 
-Here are some examples: http://stefano.io/blobbr/examples/ (no fancy stuff, just some demo of what you can do with blobbr)
+Here are some examples: http://stefanoio.github.io/blobbr/examples/ (no fancy stuff, just some demo of what you can do with blobbr)
 
 To build a minified version inside the dist folder you can use:
 ```
